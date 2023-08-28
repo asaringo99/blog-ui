@@ -1,0 +1,73 @@
+.button {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+}
+.button--primary {
+  color: white;
+  background-color: #1ea7fd;
+  transition: background-color 0.3s;
+}
+.button--primary:hover {
+  background-color: #003A7A;
+}
+.button--secondary {
+  color: #333;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  transition: background-color 0.3s, color 0.2s;
+}
+.button--secondary:hover {
+  background-color: black;
+  color: white;
+}
+.button--red {
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 0, 0);
+  box-shadow: rgba(180, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  transition: background-color 0.3s, color 0.2s;
+}
+.button--red:hover {
+  background-color: black;
+  color: white;
+}
+.button--black {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  box-shadow: rgba(180, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  transition: background-color 0.3s, color 0.2s;
+}
+.button--black:hover {
+  background-color: rgb(200, 100, 100);
+  color: white;
+}
+.button--blue {
+  color: #167ffc;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+}
+.button--darkblue {
+  color: white;
+  background-color: #006F8B;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  transition: background-color 0.3s;
+}
+.button--darkblue:hover {
+  background-color: #003A7A;
+}
+.button--small {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+.button--medium {
+  font-size: 14px;
+  padding: 11px 20px;
+}
+.button--large {
+  font-size: 16px;
+  padding: 12px 24px;
+}

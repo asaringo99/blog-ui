@@ -1,0 +1,14 @@
+.wrapper-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper-container--small {
+  padding: 10px;
+}
+.wrapper-container--medium {
+  padding: 30px;
+}
+.wrapper-container--large {
+  padding: 50px;
+}

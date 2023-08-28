@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test-storybook": "test-storybook"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
@@ -17,6 +20,7 @@
     "autoprefixer": "10.4.14",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
+    "katex": "^0.16.8",
     "next": "^13.4.12",
     "postcss": "8.4.27",
     "react": "^18.2.0",
@@ -24,10 +28,26 @@
     "react-markdown": "^8.0.7",
     "react-redux": "^8.1.2",
     "react-syntax-highlighter": "^15.5.0",
+    "rehype-katex": "^6.0.3",
     "remark": "^14.0.3",
+    "remark-breaks": "^3.0.3",
     "remark-gfm": "^3.0.1",
+    "remark-math": "^5.1.1",
     "styled-components": "^6.0.7",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.2.3",
+    "@storybook/addon-interactions": "^7.2.3",
+    "@storybook/addon-links": "^7.2.3",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.2.3",
+    "@storybook/nextjs": "^7.2.3",
+    "@storybook/react": "^7.2.3",
+    "@storybook/test-runner": "^0.13.0",
+    "@storybook/testing-library": "^0.2.0",
+    "eslint-plugin-storybook": "^0.6.13",
+    "storybook": "^7.2.3"
   }
 }

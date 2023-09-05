@@ -1,14 +1,20 @@
-import { styled } from "styled-components"
+import styled from 'styled-components';
 
-export const TextareaAutoResize = styled.textarea`
-	width: 90%;
+interface TextareaProps {
+  height?: string;
+}
+
+export const TextareaAutoResize = styled.textarea<TextareaProps>`
+  display: flex;
+  width: 100%;
+  min-height: ${props => props?.height ?? "100px"};
 	resize: none;
-	padding: 10px 15px;
+	padding: 15px;
 	font-size: 16px;
 	border: none;
 	background-color: #f9f9f9;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	border-bottom: 2px solid #ddd;
+	border-bottom: 3px solid #ddd;
 	transition: border-color 0.2s;
 
 	&:focus {

@@ -2,17 +2,12 @@ import { styled } from "styled-components"
 
 export const MarkdownContainer = styled.div`
   display: flex;
-  padding: 20px;
-  justify-content: center;
+  justify-content: space-around;
 `;
 
 export const EditorContainer = styled.div`
   min-width: 40%;
   max-width: 40%;
-	padding: 15px;
-  display: flex;
-  padding: 1em;
-  justify-content: center;
   `;
   
   export const PreviewContainer = styled.div`

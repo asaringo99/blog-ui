@@ -18,6 +18,7 @@ const MarkdownEditor: React.FC = () => {
 			<EditorContainer>
 				<AutoResizingTextarea
 						value={text}
+            height="400px"
 						onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setText(e.target.value)}
 						placeholder={"Edit text ..."}
 				/>

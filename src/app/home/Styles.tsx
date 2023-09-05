@@ -1,7 +1,8 @@
 import { styled } from "styled-components"
 
 export const PageContainer = styled.div`
-  padding: 10px 15px;
-  display: flex;
-  justify-content: center;
+  height: 100vh;
+`;
+export const InputButtonContainer = styled.div`
+  padding: 20px 15px;
 `;

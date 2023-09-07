@@ -8,12 +8,14 @@ export const MarkdownContainer = styled.div`
 export const EditorContainer = styled.div`
   min-width: 40%;
   max-width: 40%;
+  margin-left: 3%;
   `;
   
   export const PreviewContainer = styled.div`
   font-family: 'Courier New', monospace;
   min-width: 40%;
   max-width: 40%;
+  margin-right: 3%;
 	padding: 15px;
 	font-size: 16px;
   overflow-wrap: break-word;

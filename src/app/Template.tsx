@@ -19,10 +19,12 @@ export default function Template({
   return (
     <ThemeProvider theme={theme}>
       <PageContainer>
-        <Header onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount}/>
-        <Box sx={{ display: 'flex', height: '100%' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', height: '10%' }}>
+          <Header onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount}/>
+        </Box>
+        <Box sx={{ display: 'flex', height: '90%', width: '99.5%' }}>
           <Sidebar/>
-          <Box sx={{ flexGrow: 1 }}>
+          <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%', width: '80%', overflowY: 'auto'  }}>
             {children}
           </Box>
         </Box>

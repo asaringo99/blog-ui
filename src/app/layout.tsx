@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Provider } from 'react-redux'
 import store from '@/state/store'
-import ReduxProvider from '@/state/provider'
+import { NextAuthProvider, ReduxProvider } from './provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ReduxProvider>
-          {children}
-        </ReduxProvider>
+        <NextAuthProvider>
+          <ReduxProvider>
+            {children}
+          </ReduxProvider>
+        </NextAuthProvider>
       </body>
     </html>
   )

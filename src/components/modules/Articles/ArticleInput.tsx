@@ -1,4 +1,4 @@
-import { Button } from "@/components/base/Button"
+import Button from "@/components/base/Button";
 import { ArticleInputContainer } from "./Styles"
 
 interface IProps {

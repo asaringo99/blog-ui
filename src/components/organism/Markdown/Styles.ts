@@ -1,24 +1,27 @@
 import { styled } from "styled-components"
 
+interface WidthProps {
+  width?: string;
+}
+
 export const MarkdownContainer = styled.div`
+  width: 100%;
   display: flex;
   justify-content: space-around;
-`;
+  `;
 
-export const EditorContainer = styled.div`
-  min-width: 40%;
-  max-width: 40%;
-  margin-left: 3%;
+  export const EditorContainer = styled.div<WidthProps>`
+  max-width: 45%;
+  min-width: 45%;
+  overflow-wrap: break-word;
   `;
   
-  export const PreviewContainer = styled.div`
-  font-family: 'Courier New', monospace;
-  min-width: 40%;
-  max-width: 40%;
-  margin-right: 3%;
+  export const PreviewContainer = styled.div<WidthProps>`
+  max-width: 45%;
+  min-width: 45%;
+  overflow-wrap: break-word;
 	padding: 15px;
 	font-size: 16px;
-  overflow-wrap: break-word;
 	border: none;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	border-bottom: 2px solid #ddd;

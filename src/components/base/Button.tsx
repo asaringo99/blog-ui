@@ -9,11 +9,12 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-export const Button = ({ primary = 'primary', size = 'medium', backgroundColor, label, ...props }: ButtonProps) => {
+const Button = ({ primary = 'primary', size = 'medium', backgroundColor, label, ...props }: ButtonProps) => {
   return (
     <button
       type="button"
       className={['button', `button--${size}`, `button--${primary}`].join(' ')}
+      onClick={props.onClick}
       {...props}
     >
       {label}
@@ -25,3 +26,5 @@ export const Button = ({ primary = 'primary', size = 'medium', backgroundColor, 
     </button>
   );
 };
+
+export default Button

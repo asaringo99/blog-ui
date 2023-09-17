@@ -8,9 +8,10 @@ export const TextareaAutoResize = styled.textarea<TextareaProps>`
   display: flex;
   width: 100%;
   min-height: ${props => props?.height ?? "100px"};
+  overflow-wrap: break-word;
 	resize: none;
 	padding: 15px;
-	font-size: 16px;
+  font-size: 16px;
 	border: none;
 	background-color: #f9f9f9;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

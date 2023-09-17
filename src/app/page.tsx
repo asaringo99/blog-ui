@@ -1,7 +1,31 @@
-import Home from "./home/page";
+import { LoginButton, LogoutButton, ProfileButton, RegisterButton } from "@/components/template/button";
+import { User } from "@/components/template/user";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../lib/auth";
 
-export default function Root() {
+
+export default async function App() {
+  const session = await getServerSession(authOptions);
+  console.log(session);
   return (
-		<Home/>
+    <main
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "70vh",
+      }}
+    >
+      <div>
+        <LoginButton />
+        <RegisterButton />
+        <LogoutButton />
+        <ProfileButton />
+
+        <h1>Server Session</h1>
+        <pre>{JSON.stringify(session)}</pre>
+        <User />
+      </div>
+    </main>
   )
 }

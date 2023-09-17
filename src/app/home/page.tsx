@@ -1,21 +1,13 @@
 "use client"
 import React from "react";
-import { ArticleInput } from "@/components/modules/Articles/ArticleInput";
-import { InputButtonContainer } from "./Styles";
-import { Box } from '@mui/material';
-import Link from "next/link";
-import Template from "../Template";
+import { Box, Divider, List, ListItem } from '@mui/material';
+import { useArticleActions } from "@/state/slice/article/hook";
+import Template from "@/components/layouts/Template/Template";
 
-export default function Home(){
+export default function Home({ params }: { params: { user: string } }){
   return (
     <Template>
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <InputButtonContainer>
-          <Link href="/create">
-            <ArticleInput/>
-          </Link>
-        </InputButtonContainer>
-      </Box>
+      <h1>{`ようこそ！${params.user} さん!`}</h1>
     </Template>
   )
 }

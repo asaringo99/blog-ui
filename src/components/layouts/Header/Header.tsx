@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../../base/Button';
+import Button from '../../base/Button';
 import './header.css';
 
 type User = {
@@ -29,7 +29,7 @@ export const Header: React.FC<HeaderProps> = ({ user, onLogin, onLogout, onCreat
 							/>
           </g>
 				</svg>
-				<h1>Blog</h1>
+				<h1>Article</h1>
 			</div>
 			<div className="action-section">
 				{user ? (

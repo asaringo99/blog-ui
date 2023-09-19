@@ -3,18 +3,12 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import CreateIcon from '@mui/icons-material/Create';
 import AddIcon from '@mui/icons-material/Add';
 import { Button, ListItem } from '@mui/material';
-import { useArticleActions } from '@/state/slice/article/hook';
-import { routes } from '@/app/routes';
-import { useRouter } from 'next/navigation';
 
+interface IProps {
+  handleClick: () => void;
+}
 
-export const CreateArticleListItems = () => {
-  const { startEditingArticle } = useArticleActions();
-  const router = useRouter();
-  const handleClick = () => {
-    startEditingArticle();
-    router.push(routes.edit);
-  }
+export const CreateArticleListItems = ({ handleClick }: IProps) => {
   return (
     <React.Fragment>
       <ListItem>

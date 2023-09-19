@@ -3,18 +3,12 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import UploadIcon from '@mui/icons-material/Upload';
 import PublicIcon from '@mui/icons-material/Public';
 import { Button, IconButton, ListItem } from '@mui/material';
-import { useArticleActions } from '@/state/slice/article/hook';
-import { useRouter } from 'next/navigation';
-import { routes } from '@/app/routes';
 
+interface IProps {
+  handleClick: () => void;
+}
 
-export const PostArticleListItems = () => {
-  const router = useRouter();
-  const { article, addArticles } = useArticleActions();
-  const handleClick = () => {
-    addArticles(article);
-    router.push(routes.articles);
-  }
+export const PostArticleListItems = ({ handleClick }: IProps) => {
   return (
     <React.Fragment>
       <ListItem>

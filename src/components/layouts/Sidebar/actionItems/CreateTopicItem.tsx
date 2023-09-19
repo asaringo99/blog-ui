@@ -13,8 +13,6 @@ import Slide from '@mui/material/Slide';
 import TextField from '@mui/material/TextField';
 import ListItem from '@mui/material/ListItem';
 import { TransitionProps } from '@mui/material/transitions';
-import { useRouter } from 'next/navigation';
-import { useTopicActions } from '@/state/slice/topic/hook';
 import { useDashboardActions } from '@/state/slice/dashboard/hook';
 
 
@@ -28,10 +26,9 @@ const Transition = React.forwardRef(function Transition(
 });
 
 export const CreateTopicListItems = () => {
+  const { addTopic } = useDashboardActions();
   const [ open, setOpen ] = useState(false);
   const [ title, setTitle ] = useState("");
-  const { addTopic } = useDashboardActions();
-  const router = useRouter();
   const handleClick = () => {
     setOpen(true);
   }

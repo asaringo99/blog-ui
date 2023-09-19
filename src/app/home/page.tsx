@@ -1,13 +1,13 @@
-"use client"
 import React from "react";
-import { Box, Divider, List, ListItem } from '@mui/material';
-import { useArticleActions } from "@/state/slice/article/hook";
 import Template from "@/components/layouts/Template/Template";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 
-export default function Home({ params }: { params: { user: string } }){
+export default async function Home(){
+  const session = await getServerSession(authOptions);
   return (
     <Template>
-      <h1>{`ようこそ！${params.user} さん!`}</h1>
+      <h1>{`ようこそ！${session?.user?.name} さん!`}</h1>
     </Template>
   )
 }

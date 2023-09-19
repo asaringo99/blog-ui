@@ -14,12 +14,18 @@ export default function Dashboard({ params }: { params: { user: string } }){
   return (
     <Template>
       <List sx={{ width: '90%' }}>
-        <ListItem>
+        <ListItem key={0}>
           <ListItemText primary="名前"/>
         </ListItem>
         <Divider />
         {dashboard.topics.map((topic, index) =>
-          <TopicsPreview index={index} topic={topic} selected={selected} setSelected={setSelected}/>
+          <TopicsPreview
+            index={index+1}
+            topic={topic}
+            username={params.user}
+            selected={selected}
+            setSelected={setSelected}
+          />
         )}
       </List>
     </Template>

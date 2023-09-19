@@ -19,33 +19,45 @@ import ListItemText from '@mui/material/ListItemText';
 import IconButton from "@mui/material/IconButton";
 import { Topic } from "@/state/type";
 import { useDashboardActions } from "@/state/slice/dashboard/hook";
+import { useRouter } from 'next/navigation';
+import { routes } from '@/app/routes';
 
 interface IProps {
   index: number;
   topic: Topic;
+  username: string;
   selected: number;
   setSelected: (value: number) => void;
 }
 
-export const TopicsPreview = ({ index, topic, selected, setSelected }: IProps) => {
+export const TopicsPreview = ({ index, topic, username, selected, setSelected }: IProps) => {
+  const { editDashboardTopic } = useDashboardActions();
   const [ open, setOpen ] = useState(false);
   const [ isPrivate, setIsPrivate ] = useState(topic.isPrivate)
   const [ title, setTitle ] = useState(topic.title)
-  const { editDashboardTopic } = useDashboardActions();
+  const router = useRouter();
   const isSelected = selected === index;
+
   const handleSettingClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.stopPropagation();
     setOpen(true);
   }
+
   const handleClose = () => {
     setOpen(false);
     setTitle(topic.title);
     setIsPrivate(topic.isPrivate);
   }
+
   const handleAgree = () => {
     setOpen(false);
     editDashboardTopic(index, {...topic, title: title, isPrivate: isPrivate});
   }
+
+  const handleDoubleClickTopic = () => {
+    router.push(routes.articles(username, topic.title))
+  }
+
   return (
     <React.Fragment>
       <ListItemButton
@@ -53,7 +65,7 @@ export const TopicsPreview = ({ index, topic, selected, setSelected }: IProps) =
         divider
         sx={{ position: 'relative' }}
         onClick={() => setSelected(index)} selected={isSelected}
-        onDoubleClick={() => alert("hello")}
+        onDoubleClick={handleDoubleClickTopic}
       >
         <ListItemIcon>
           {topic.isPrivate ? <LockIcon/> : <LockOpenIcon/>}

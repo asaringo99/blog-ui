@@ -7,12 +7,8 @@ import { Box } from "@mui/material";
 import Template from "@/components/layouts/Template/Template";
 import { useArticleActions } from "@/state/slice/article/hook";
 
-export default function Edit(){
-  const {
-    article,
-    updateArticleTitle,
-  } = useArticleActions();
-
+export default function Edit({ params }: { params: { user: string, topic: string } }){
+  const { article, updateArticleTitle } = useArticleActions();
   return (
     <Template>
       <Box sx={{ width: '80%', padding: '20px'}}>

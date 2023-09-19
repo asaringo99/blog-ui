@@ -1,4 +1,5 @@
 export interface Article {
+  topic: string;
   title: string;
   tags: string[];
   content: string;
@@ -7,7 +8,6 @@ export interface Article {
 };
 
 export interface Articles {
-  topic: string;
   contents: Article[];
 };
 

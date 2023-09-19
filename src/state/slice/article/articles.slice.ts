@@ -2,7 +2,6 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Articles } from "../../type";
 
 const initialState: Articles = {
-  topic: "",
   contents: [],
 };
 

@@ -4,6 +4,7 @@ import { updateArticles } from "@/state/slice/article/articles.slice";
 import { Article } from "@/state/type";
 
 const initialArticle = {
+  topic: '',
   title: '',
   tags: [],
   content: '',
@@ -18,6 +19,12 @@ export const useArticleActions = () => {
 
   const initArticle = (article: Article = initialArticle) => {
     const payload = article;
+    dispatch(updateArticle(payload));
+  }
+
+  const createArticle = (topic: string) => {
+    const payload = {...initialArticle, topic: topic};
+    console.log(payload)
     dispatch(updateArticle(payload));
   }
 
@@ -53,8 +60,9 @@ export const useArticleActions = () => {
     dispatch(updateArticle(payload));
   }
 
-  const addArticles = (article: Article) => {
+  const addArticle = (article: Article) => {
     const payload = {...articles, contents: [...articles.contents, article]};
+    console.log(article, payload);
     dispatch(updateArticles(payload))
   }
 
@@ -65,16 +73,18 @@ export const useArticleActions = () => {
   }
 
   return {
+    initialArticle,
     article,
     articles,
     initArticle,
+    createArticle,
     startEditingArticle,
     updateArticleTitle,
     updateIsPrivate,
     updateArticleContent,
     updateTags,
     removeTag,
-    addArticles,
+    addArticle,
     deleteArticles,
   };
 };

@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Article } from "../../type";
 
 const initialState: Article = {
+  topic: '',
   title: '',
   tags: [],
   content: '',
@@ -14,6 +15,7 @@ const articleSlice = createSlice({
   initialState,
   reducers: {
     updateArticle: (state, action: PayloadAction<Article>) => {
+      state.topic = action.payload.topic;
       state.content = action.payload.content;
       state.title = action.payload.title;
       state.tags = action.payload.tags;

@@ -5,11 +5,6 @@ import { useArticleActions } from "@/state/slice/article/hook";
 import Editor from "./Editor";
 import Preview from "./Preview";
 
-interface IProps {
-  text: string;
-  onChange: (text: string) => void;
-}
-
 const MarkdownEditor = () => {
   const {
     article,

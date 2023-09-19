@@ -9,7 +9,8 @@ import GithubProvider from "next-auth/providers/github"
 
 export const authOptions: NextAuthOptions = {
   pages: {
-    signIn: "/login",
+    signIn: "/signin",
+    signOut: "/",
   },
   session: {
     strategy: "jwt",
@@ -43,9 +44,9 @@ export const authOptions: NextAuthOptions = {
         }
 
         return {
-          id: user.id,
+          id: user.id.toString(),
           email: user.email,
-          name: user.name,
+          name: user.username,
           randomKey: "Hey cool",
         };
       },
@@ -74,7 +75,6 @@ export const authOptions: NextAuthOptions = {
     jwt: async ({ token, user, account, profile }) => {
       // 注意: トークンをログ出力してはダメです。
       console.log('in jwt', {user, token, account, profile})
-
       if (user) {
           token.user = user;
           const u = user as unknown as any;
